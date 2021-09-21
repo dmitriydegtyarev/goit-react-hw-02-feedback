@@ -18,7 +18,6 @@ export class App extends Component {
   clickFeedback = ({ target }) => {
     const { feedback } = target.dataset;
     this.setState(prevState => ({ [feedback]: prevState[feedback] + 1 }));
-    console.log([feedback]);
   };
 
   countTotalFeedback = () => {
@@ -39,8 +38,6 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     const totalFeedback = this.countTotalFeedback();
     const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
-
-    console.log(this.state);
 
     return (
       <Container>

@@ -1,8 +1,12 @@
+import PropTypes from 'prop-types';
+
+import css from 'Component/FeedbackOptions/FeedbackButton/FeedbackButton.module.css';
+
 export const FeedbackButton = ({ feedback, clickFeedback }) => {
   return (
-    <li>
+    <li className={css.item}>
       <button
-        className={feedback}
+        className={css[feedback]}
         type="button"
         data-feedback={feedback}
         onClick={clickFeedback}
@@ -11,4 +15,9 @@ export const FeedbackButton = ({ feedback, clickFeedback }) => {
       </button>
     </li>
   );
+};
+
+FeedbackButton.propTypes = {
+  feedback: PropTypes.oneOf(['good', 'neutral', 'bad']).isRequired,
+  clickFeedback: PropTypes.func.isRequired,
 };

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import css from 'Component/Statistics/Statistics.module.css';
+
 export const Statistics = ({
   good,
   neutral,
@@ -8,12 +10,23 @@ export const Statistics = ({
   positiveFeedbackPercentage,
 }) => {
   return (
-    <ul>
-      <li>Good: {good}</li>
-      <li>Neutral: {neutral}</li>
-      <li>Bad: {bad}</li>
-      <li>Total: {totalFeedback}</li>
-      <li>Positive Percantage: {positiveFeedbackPercentage}</li>
+    <ul className={css.list}>
+      <li className={css.item}>
+        Good: <span className={css.itemFeedback}>{good}</span>
+      </li>
+      <li className={css.item}>
+        Neutral: <span className={css.itemFeedback}>{neutral}</span>
+      </li>
+      <li className={css.item}>
+        Bad: <span className={css.itemFeedback}>{bad}</span>
+      </li>
+      <li className={css.item}>
+        Total: <span className={css.itemFeedback}>{totalFeedback}</span>
+      </li>
+      <li className={css.item}>
+        Positive Percantage:{' '}
+        <span className={css.itemFeedback}>{positiveFeedbackPercentage}</span>
+      </li>
     </ul>
   );
 };
